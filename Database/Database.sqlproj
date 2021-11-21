@@ -56,21 +56,22 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tablas" />
-    <Folder Include="StoreProcedures" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\StoreProcedures" />
+    <Folder Include="dbo\Tablas" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tablas\Producto.sql" />
-    <Build Include="Tablas\Orden.sql" />
-    <Build Include="StoreProcedures\OrdenActualizar.sql" />
-    <Build Include="StoreProcedures\OrdenEliminar.sql" />
-    <Build Include="StoreProcedures\OrdenInsertar.sql" />
-    <Build Include="StoreProcedures\OrdenLista.sql" />
-    <Build Include="StoreProcedures\OrdenObtener.sql" />
-    <Build Include="StoreProcedures\ProductoActualizar.sql" />
-    <Build Include="StoreProcedures\ProductoEliminar.sql" />
-    <Build Include="StoreProcedures\ProductoInsertar.sql" />
-    <Build Include="StoreProcedures\ProductoLista.sql" />
-    <Build Include="StoreProcedures\ProductoObtener.sql" />
+    <Build Include="dbo\StoreProcedures\OrdenActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\OrdenEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\OrdenInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\OrdenLista.sql" />
+    <Build Include="dbo\StoreProcedures\OrdenObtener.sql" />
+    <Build Include="dbo\StoreProcedures\ProductoActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\ProductoEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\ProductoInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\ProductoLista.sql" />
+    <Build Include="dbo\StoreProcedures\ProductoObtener.sql" />
+    <Build Include="dbo\Tablas\Orden.sql" />
+    <Build Include="dbo\Tablas\Producto.sql" />
   </ItemGroup>
 </Project>
