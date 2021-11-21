@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -67,6 +67,10 @@
     <None Include="wwwroot\Scripts\AxiosProvider.js.map" />
     <None Include="wwwroot\Scripts\entity.js" />
     <None Include="wwwroot\Scripts\entity.js.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>

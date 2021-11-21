@@ -16,7 +16,7 @@
                     if (BValidateData(this.Formulario)) {
                         Loading.fire("Guardando");
 
-                        App.AxiosProvider.ContratoGuardar(this.Entity).then(data => {
+                        App.AxiosProvider.ProductoGuardar(this.Entity).then(data => {
                             Loading.close();
 
                             if (data.CodeError == 0) {
