@@ -39,7 +39,6 @@
                 }
             },
 
-
             mounted() {
                 CreateValidator(this.Formulario)
             }
@@ -48,4 +47,5 @@
     );
 
     Formulario.$mount("#AppEdit")
+
 }

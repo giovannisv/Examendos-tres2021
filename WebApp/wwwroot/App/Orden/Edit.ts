@@ -1,50 +1,57 @@
 ﻿namespace OrdenEdit {
-var Entity = $("#AppEdit").data("entity");
 
-var Formulario = new Vue(
-    {
-        data:
+    var Entity = $("#AppEdit").data("entity");
+
+    var Formulario = new Vue(
         {
-            Formulario: "#FormEdit",
-            Entity: Entity
-        },
+            data:
+            {
+                Formulario: "#FormEdit",
+                Entity: Entity
+            },
 
-        methods: {
-            Save() {
+            methods: {
+                Save() {
 
-                if (BValidateData(this.Formulario)) {
-                    Loading.fire("Guardando");
+                    if (BValidateData(this.Formulario)) {
+                        Loading.fire("Guardando");
 
-                    App.AxiosProvider.OrdenGuardar(this.Entity).then(data => {
-                        Loading.close();
+                        App.AxiosProvider.OrdenGuardar(this.Entity).then(data => {
+                            Loading.close();
 
-                        if (data.CodeError == 0) {
-                            Toast.fire({ title: "Se guardo correctamente", icon: "success" })
-                                .then(() => window.location.href = "Orden/Grid");
-                        }
-                        else {
-                            Toast.fire({ title: data.MsgError, icon: "error" })
-                        }
+                            if (data.CodeError == 0) {
+                                Toast.fire({ title: "Se guardo correctamente", icon: "success" })
+                                    .then(() => window.location.href = "Orden/Grid");
+                            }
+                            else {
+                                Toast.fire({ title: data.MsgError, icon: "error" })
+                            }
 
 
-                    });
+                        });
+
+                    }
+                    else {
+                        Toast.fire({ title: "Por favor complete los campos requeridos" });
+
+                    }
 
                 }
-                else {
-                    Toast.fire({ title: "Por favor complete los campos requeridos" });
+            },
 
-                }
 
+            mounted() {
+                CreateValidator(this.Formulario)
             }
-        },
-
-
-        mounted() {
-            CreateValidator(this.Formulario)
         }
-    }
 
-);
+    );
 
-Formulario.$mount("#AppEdit")
+    Formulario.$mount("#AppEdit")
+
 }
+
+
+
+
+
