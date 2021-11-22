@@ -25,7 +25,7 @@ namespace WebApp.Pages.Orden
 
         public OrdenEntity Entity { get; set; } = new OrdenEntity();
 
-        public IEnumerable<ProductoEntity> ProdcutoLista { get; set; } = new List<ProductoEntity>();
+        public IEnumerable<ProductoEntity> ProductoLista { get; set; } = new List<ProductoEntity>();
 
         [BindProperty(SupportsGet = true)]
         public int? id { get; set; }

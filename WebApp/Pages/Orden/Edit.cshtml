@@ -15,7 +15,7 @@ div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.
                 <label for="Entity.IdOrden" class="form-label">Id Orden</label>
 
                 <select asp-for="Entity.IdOrden" class="form-select"
-                <select asp-for="Entity.IdProducto" class="form-select"
+                
 
                         asp-items="@(new SelectList(Model.OrdenLista,"IdOrden","IdProducto","CantidadProducto","Estado"))" required>
                 </select>

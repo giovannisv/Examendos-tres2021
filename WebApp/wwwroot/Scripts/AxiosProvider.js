@@ -4,14 +4,30 @@ var App;
     var AxiosProvider;
     (function (AxiosProvider) {
         //export const GuardarEmpleado = () => axios.get<Entity.DBEntity>("aplicacion").then(({data})=>data );
-        AxiosProvider.ContratoEliminar = function (id) { return axios.delete("Contrato/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+        AxiosProvider.OrdenEliminar = function (id) { return axios.delete("Orden/Grid?handler=Eliminar&id=" + id).then(function (_a) {
             var data = _a.data;
             return data;
         }); };
-        AxiosProvider.ContratoGuardar = function (entity) { return axios.post("Contrato/Edit", entity).then(function (_a) {
+        AxiosProvider.OrdenGuardar = function (entity) { return axios.post("Orden/Edit", entity).then(function (_a) {
             var data = _a.data;
             return data;
-        }); };
+        });
+        };
+
+        AxiosProvider.ProductoEliminar = function (id) {  return axios.delete("Producto/Grid?handler=Eliminar&id=" + id).then(function (_a) {
+                var data = _a.data;
+                return data;
+            });
+        };
+        AxiosProvider.ProductoGuardar = function (entity) {
+            return axios.post("Producto/Edit", entity).then(function (_a) {
+                var data = _a.data;
+                return data;
+            });
+        };
+
+
+
     })(AxiosProvider = App.AxiosProvider || (App.AxiosProvider = {}));
 })(App || (App = {}));
 //# sourceMappingURL=AxiosProvider.js.map
