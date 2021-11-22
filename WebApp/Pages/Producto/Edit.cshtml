@@ -12,11 +12,8 @@ div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.
             <input type="hidden" asp-for="Entity.IdProducto" />
 
             <div class="form-group mb-3">
-                <label for="Entity.MarcaVehiculoId" class="form-label">Marca Vehiculo</label>
-
-                <select asp-for="Entity.IdProducto" class="form-select"
-                        asp-items="@(new SelectList(Model.ProductoLista,"IdProducto","NombreProducto","PrecioProducto"))" required>
-                </select>
+                <label for="Entity.IdProducto" class="form-label">Id Producto</label>
+                
             </div>
 
             <div class="form-group mb-3">
@@ -46,6 +43,6 @@ div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.
 
 
 @section Scripts{
-    <script defer src="~/App/Vehiculo/Edit.js"></script>
-
+    <script defer src="~/App/Producto/Grid.js"></script>
+    
 }

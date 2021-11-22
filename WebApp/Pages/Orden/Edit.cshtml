@@ -11,26 +11,27 @@ div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.
         <form id="FormEdit" method="post">
             <input type="hidden" asp-for="Entity.IdOrden" />
 
+
             <div class="form-group mb-3">
-                <label for="Entity.IdOrden" class="form-label">Id Orden</label>
+                <label for="Entity.IdProducto" class="form-label">Id Producto</label>
 
-                <select asp-for="Entity.IdOrden" class="form-select"
-                
-
-                        asp-items="@(new SelectList(Model.OrdenLista,"IdOrden","IdProducto","CantidadProducto","Estado"))" required>
+                <select asp-for="Entity.IdProducto" class="form-select" v-model="Entity.IdProducto"
+                        asp-items="@(new SelectList(Model.ProductoLista,"IdProducto","NombreProducto","PrecioProducto"))" required>
                 </select>
             </div>
 
+
             <div class="form-group mb-3">
-                <label for="Entity.CantidadProducto" class="form-label">Nombre Producto</label>
+                <label for="Entity.CantidadProducto" class="form-label">Cantidad Producto</label>
                 <input type="text" class="form-control" asp-for="Entity.CantidadProducto" maxlength="50" required>
             </div>
 
             <div class="form-group form-check form-switch">
-                <input class="form-check-input" type="checkbox" asp-for="Entity.Orden" v-model="Entity.Orden" value="true">
+                <input class="form-check-input" type="checkbox" asp-for="Entity.Estado" v-model="Entity.Estado" value="true">
                 <label class="form-check-label" for="Entity_Estado">Estado</label>
             </div>
 
+                       
             <div class="row">
                 <div class="col-4">
                     <button type="submit" class="btn btn-outline-primary">
